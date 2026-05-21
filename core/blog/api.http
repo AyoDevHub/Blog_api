@@ -1,0 +1,30 @@
+POST http://127.0.0.1:8000/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "user",
+    "password": "user1234"
+}
+
+###
+POST http://127.0.0.1:8000/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3OTQ0ODQ5MSwiaWF0IjoxNzc5MzYyMDkxLCJqdGkiOiI1NGFlZGVlNTRlNTc0MzI2OTEzMDFkMmZlZDUwZWEwZCIsInVzZXJfaWQiOiIyIn0.Q2pjH8ZmKMjImA19iABZN5n6DLQIrWKmOqwIJYE5mPk"
+}
+###
+GET http://127.0.0.1:8000/blog/posts/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5MzYyMzkxLCJpYXQiOjE3NzkzNjIwOTEsImp0aSI6IjI5NDIzYmM4ZTkzMjQ5ZTQ4MzI3ZDA2NWVmMTM0ZWRhIiwidXNlcl9pZCI6IjIifQ.8K4sgAT_sUKm2h7cAeTI71JNLrMGERQHHW38pznPb8c
+
+###
+POST http://127.0.0.1:8000/blog/posts/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5MzY0ODQ4LCJpYXQiOjE3NzkzNjQ1NDgsImp0aSI6IjU5NjQzZjM2YTRkZDQ2ZWVhMGNkYjIyNmNkNzNmNzNmIiwidXNlcl9pZCI6IjIifQ.8K4PAU4n0G-qMiRn6na8gUS6sgxG8_VRTVdecNzTEvg
+
+{
+    "title": "New Post",
+    "description": "This is a description of the new post.",
+    "content": "This is a new post created via API."
+}
