@@ -11,15 +11,15 @@ A RESTful Blog API built with Django REST Framework featuring authentication, CR
 - SQLite database
 - RESTful API structure
 
-  ## API ENDPOINTS 
+## API ENDPOINTS 
 
-| Endpoint         | Method    | Description                             |
-| ------------     | --------- | --------------------------------------  |
-| blog/posts/      | GET       | List all posts(Authenticated)           |
-| blog/posts/<id>/ | GET       | Retrieve single post(Authenticated)     |
-| blog/posts/      | POST      | Create post (Admin only)                |
-| blog/posts/<id>/ | PUT/PATCH | Update post (Admin only)                |
-| blog/posts/<id>/ | DELETE    | Delete post (Admin only)                |
+| Endpoint           | Method    | Description                             |
+| ------------       | --------- | --------------------------------------  |
+| blog/posts/        | GET       | List all posts(Authenticated)           |
+| blog/posts/<id>/   | GET       | Retrieve single post(Authenticated)     |
+| blog/posts/        | POST      | Create post (Admin only)                |
+| blog/posts/<id>/   | PUT/PATCH | Update post (Admin only)                |
+| blog/posts/<id>/   | DELETE    | Delete post (Admin only)                |
 
 
 ## Tech Stack
