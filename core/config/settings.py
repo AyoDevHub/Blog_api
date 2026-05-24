@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #Third party
     'rest_framework',
     'drf_spectacular',
+    'django_extensions',
     'rest_framework_simplejwt',
     'silk',
 ]
