@@ -25,6 +25,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 {
     "title": "New Post",
-    "description": "This is a description of the new post.",
-    "content": "This is a new post created via API."
+    "description": "This is a description of the new post",
+    "content": "This is a new post created via API"
 }
