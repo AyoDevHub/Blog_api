@@ -26,5 +26,5 @@ class PostPermission(BasePermission):
             return obj.owner == user
         
         
-        # Reader = Read-Only 
+        # Readers can't modify anything
         return False
