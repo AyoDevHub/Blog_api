@@ -1,10 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import User 
+from django.conf import settings
 
 
 class Post(models.Model):
     owner = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         related_name='posts',
         on_delete=models.CASCADE
         )
