@@ -6,7 +6,7 @@ A RESTful Blog API built with Django REST Framework featuring authentication, CR
 
 - User authentication
 - CRUD operations for blog posts
-- Admin-only create, update, and delete permissions
+- Admin, Author and user permissions
 - Pagination
 - SQLite database
 - RESTful API structure
