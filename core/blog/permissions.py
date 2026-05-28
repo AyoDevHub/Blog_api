@@ -9,8 +9,30 @@ class PostPermission(BasePermission):
             return True
         
         
-        # Only logged-in users can create/update/delete
-        return request.user and request.user.is_authenticated
+        # block unauthenticated user 
+        if not request.user or not request.user.is_authenticated:
+            return False
+            
+        
+        # Admin always allowed 
+        if request.user.role == 'admin':
+            return True
+        
+        
+        # Author always allowed
+        if request.user.role == 'author':
+            return True
+        
+        
+        # Restricting readers from creating
+        if request.user.role == 'reader':
+            return False
+        
+        
+        return False
+            
+        
+       
     
     
     def has_object_permission(self, request, view, obj):
@@ -19,7 +41,8 @@ class PostPermission(BasePermission):
         
         # Admin has no restrictions
         if user.role == 'admin':
-            True
+            return True
+            
             
         # Author permission to only their post
         if user.role == 'author':
@@ -27,4 +50,4 @@ class PostPermission(BasePermission):
         
         
         # Readers can't modify anything
-        return False
+        return request.method in SAFE_METHODS

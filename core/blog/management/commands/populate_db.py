@@ -14,7 +14,7 @@ class Command(BaseCommand):
         # Create Users 
         
         admin_user, created = User.objects.get_or_create(
-            username='admin',
+            username='admin_user',
             defaults={
                 'role':'admin',
                 'email':'admin@gmail.com'
@@ -39,6 +39,19 @@ class Command(BaseCommand):
         
         if created:
             author1.set_password('author1234')
+            author1.save()
+            
+        
+        author2 , created = User.objects.get_or_create(
+            username = 'author2',
+            defaults= {
+                'role':'author',
+                'email':'author2@gmail.com'
+            }
+        )
+        
+        if created:
+            author1.set_password('ayomide123')
             author1.save()
             
             

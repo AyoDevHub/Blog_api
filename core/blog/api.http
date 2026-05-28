@@ -2,26 +2,50 @@ POST http://127.0.0.1:8000/token/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "password": "admin1234"
+    "username": "admin_user",
+    "password": "admin123"
 }
 
 ###
+# Author1
 POST http://127.0.0.1:8000/token/refresh/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3OTc3OTM3MywiaWF0IjoxNzc5NjkyOTczLCJqdGkiOiJmNDJkY2QwZjkxMjc0ZGQ1YmI0MWUyMmY0NmQxN2I1MyIsInVzZXJfaWQiOiIxIn0.aFAHhvwwFWLCYj_IQN_JGEQafdnBXGfitsFzyCpoZtc"
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3OTk5NjM3OSwiaWF0IjoxNzc5OTA5OTc5LCJqdGkiOiI2NjgwZjczYTEyOTA0ZTU1YmIwZDg3ODBhNjM4ZmRkMSIsInVzZXJfaWQiOiI1In0.WGSMHbINV6Bsga2s4EY-YV39MJgECArOatSqvcpBhkc"
 }
+
+
+###
+# Author2
+POST http://127.0.0.1:8000/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3OTk5NTY3NiwiaWF0IjoxNzc5OTA5Mjc2LCJqdGkiOiJlOTJmNGE1YjQwNGY0NzcwYjg3ZDFiZWM2YWY4ZjcxOSIsInVzZXJfaWQiOiI0In0.aiW0Y48TxgHwQMQcBeqsk2E4q-jkySPuiZybftcSr9g"
+}
+
+
 ###
 GET http://127.0.0.1:8000/blog/posts/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NjkzMjA1LCJpYXQiOjE3Nzk2OTI5MDUsImp0aSI6IjYzNWIyNGRjNGY4ZDRkZjJiOTg4ZWRhMTgxNTVhNDFhIiwidXNlcl9pZCI6IjIifQ.uTu0uQKLw2YTMZPh9PAHfK5DQczD8WPU5XAPpLI6R3w
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5OTEwODk5LCJpYXQiOjE3Nzk5MTA1OTksImp0aSI6IjBlMzdhODcxNDE1MjQyMzViNWNhYzcyNjAwMzljMTk1IiwidXNlcl9pZCI6IjUifQ.wN5HALa0wTcmf0gpQ4zhmgE94xix0xQ9dSOlWM9z1fU
 
 ###
 POST http://127.0.0.1:8000/blog/posts/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NjkzMjczLCJpYXQiOjE3Nzk2OTI5NzMsImp0aSI6IjQ0NWYwMDAwNGY0NTQzY2RiNjhkOTZjOTNkNDRlNGZiIiwidXNlcl9pZCI6IjEifQ.y4gMs_OtjjwyYRHhe8NbUi7cdYQXk80Qb6bCkO661Yc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5OTEwMzA3LCJpYXQiOjE3Nzk5MTAwMDcsImp0aSI6ImFiMDc0ZjZlYTZjZTRmOTc5ZGIwZDJkZWI5OTI3Y2I3IiwidXNlcl9pZCI6IjUifQ.GpiEDsqmcCgJNJMR0U-I9l1A7tl5C9mhwQ3jkVVnd3w
+
+{
+    "title": "New Post",
+    "description": "This is a description of the new post",
+    "content": "This is a new post created via API"
+}
+
+###
+DELETE  http://127.0.0.1:8000/blog/posts/7/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5OTA4NzQ3LCJpYXQiOjE3Nzk5MDg0NDcsImp0aSI6ImEyODk2NzA1MjNhMzRlMGI4MzAzNzQ0NTM4OWNlNDdiIiwidXNlcl9pZCI6IjMifQ.IzuxsdjR6mKffjXy3aBUEAGkhahFbfi8ensUHpiE6LE
 
 {
     "title": "New Post",
